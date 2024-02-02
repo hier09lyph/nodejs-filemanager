@@ -1,0 +1,11 @@
+{
+  "name": "nodejs-filemanager",
+  "version": "1.0.0",
+  "description": "nodejs course task",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js -- --username=Username"
+  },
+  "author": "hier09lyph",
+  "license": "ISC"
+}
