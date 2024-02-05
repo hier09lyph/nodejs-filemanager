@@ -1,7 +1,8 @@
 import { promises as fs 
 } from "fs";
 import path from "path";
-import { getAbsolutePath, directoryExists, sortAlphabetically, fileExists, getFileType  } from "../src/utils/utils.js";
+import { getAbsolutePath, directoryExists, getFileType  } from "./utils/utilsForPath.js";
+import sortAlphabetically from './utils/utilForSort.js'
 
 function goToParentDir(currentWorkingDir) {
   const parentDir = path.dirname(currentWorkingDir);

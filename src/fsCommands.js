@@ -3,7 +3,7 @@ import {
   createReadStream,
   createWriteStream,
 } from "fs";
-import { getAbsolutePath, fileExists } from "./utils/utils.js";
+import { getAbsolutePath, fileExists } from "./utils/utilsForPath.js";
 
 const readFile = async (currentWorkingDir, args) => {
   const absolutePath = await fileCheackAndGetAbsolutePath(

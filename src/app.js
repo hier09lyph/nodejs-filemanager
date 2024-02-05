@@ -2,6 +2,8 @@ import { argv, cwd, stdin, stdout, exit } from "process";
 import { handleOSCommand, getHomeDir } from "./osComands.js";
 import { goToParentDir, goToDir, listInFolder } from "./navComands.js";
 import { readFile, createFile, renameFile, copyFile,moveFile,deleteFile } from "./fsCommands.js";
+import {calculateSHA256Hash} from './hashCommands.js'
+
 
 const args = argv.slice(2);
 const usernameArg = args.find((arg) => arg.startsWith("--username="));
@@ -55,6 +57,9 @@ async function choiseCommand(command) {
       handleOSCommand(argsInCli);
       console.log(argsInCli);
       break;
+    case "hash":
+    calculateSHA256Hash(currentWorkingDir, args);
+    break;
     case ".exit":
       exitFileManager();
       break;
