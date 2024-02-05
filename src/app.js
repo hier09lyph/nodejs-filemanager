@@ -1,6 +1,7 @@
 import { argv, cwd, stdin, stdout, exit } from "process";
 import { handleOSCommand, getHomeDir } from "./osComands.js";
 import { goToParentDir, goToDir, listInFolder } from "./navComands.js";
+import { readFile, createFile, renameFile, copyFile,moveFile,deleteFile } from "./fsCommands.js";
 
 const args = argv.slice(2);
 const usernameArg = args.find((arg) => arg.startsWith("--username="));
@@ -23,6 +24,24 @@ async function choiseCommand(command) {
   const argsInCli = args.map((arg) => arg.trim()).filter((arg) => arg !== "");
 
   switch (operation) {
+    case "cat":
+      await readFile(currentWorkingDir, args);
+      break;
+    case "add":
+      await createFile(currentWorkingDir, args);
+      break;
+    case "rn":
+      await renameFile(currentWorkingDir, args);
+      break;
+    case "cp":
+      await copyFile(currentWorkingDir, args);
+      break;
+    case "mv":
+      await moveFile(currentWorkingDir, args);
+      break;
+    case "rm":
+      await deleteFile(currentWorkingDir, args);
+      break;
     case "up":
       currentWorkingDir = goToParentDir(currentWorkingDir);
       break;
