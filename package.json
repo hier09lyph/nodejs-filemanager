@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "nodejs course task",
   "main": "app.js",
+  "type": "module",
   "scripts": {
-    "start": "node src/app.js -- --username=Username"
+    "start": "node src/app.js -- --username=Anonymous"
   },
   "author": "hier09lyph",
   "license": "ISC"
